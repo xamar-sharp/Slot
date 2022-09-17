@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Name="page" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.DriveInfoPage" xmlns:local="clr-namespace:Slot">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:AnalyticConverter x:Key="driveConv"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <BoxView HeightRequest="20"/>
+            <Grid HeightRequest="780" VerticalOptions="StartAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="{local:Localizer DriveName}" Grid.Row="0" Grid.Column="0" FontFamily="kirillica"/>
+                <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="1" FontFamily="kirillica"/>
+                <Label Text="{local:Localizer IsReady}" Grid.Row="1" Grid.Column="0" FontFamily="kirillica"/>
+                <Label Text="{Binding IsReady}" Grid.Row="1" Grid.Column="1" FontFamily="kirillica"/>
+                <Label Text="{local:Localizer Size}" Grid.Row="2" Grid.Column="0" FontFamily="kirillica"/>
+                <Label Text="{Binding Size}" Grid.Row="2" Grid.Column="1" FontFamily="kirillica"/>
+                <Label Text="{local:Localizer TotalFree}" Grid.Row="3" Grid.Column="0" FontFamily="kirillica"/>
+                <Label Text="{Binding TotalFree}" Grid.Row="3" Grid.Column="1" FontFamily="kirillica"/>
+                <Label Text="{local:Localizer AvailableFree}" Grid.Row="4" Grid.Column="0" FontFamily="kirillica"/>
+                <Label Text="{Binding AvailableFree}" Grid.Row="4" Grid.Column="1" FontFamily="kirillica"/>
+                <Label Text="{local:Localizer Type}" Grid.Row="5" Grid.Column="0" FontFamily="kirillica"/>
+                <Label Text="{Binding Type}" Grid.Row="5" Grid.Column="1" FontFamily="kirillica"/>
+                <Label Text="{local:Localizer Format}" Grid.Row="6" Grid.Column="0" FontFamily="kirillica"/>
+                <Label Text="{Binding Format}" Grid.Row="6" Grid.Column="1" FontFamily="kirillica"/>
+                <ProgressBar Progress="{Binding .,Converter={StaticResource driveConv}}" ProgressColor="CadetBlue" ScaleY="10" VerticalOptions="StartAndExpand" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"/>
+            </Grid>
+            <Label Text="{local:Notify {x:Reference page}}" FontSize="Medium" FontFamily="kirillica"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

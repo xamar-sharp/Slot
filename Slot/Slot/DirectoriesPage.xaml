@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Name="page" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.DirectoriesPage" xmlns:local="clr-namespace:Slot">
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Source}" HasUnevenRows="False" RowHeight="80" SeparatorColor="DimGray" ItemTapped="ListView_ItemTapped" CachingStrategy="RetainElement">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Horizontal">
+                                <Image HeightRequest="80" WidthRequest="80" HorizontalOptions="StartAndExpand" Source="{local:ImgRes Files.folder.png}" Aspect="Fill"/>
+                                <Label Text="{Binding Name}" FontFamily="kirillica" FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+                            </StackLayout>
+                        </ViewCell.View>
+                        <ViewCell.ContextActions>
+                            <MenuItem IsDestructive="False" Command="{Binding SubdirectoryCommand}" IconImageSource="{local:ImgRes Files.subdir.png}"/>
+                            <MenuItem IsDestructive="False" Command="{Binding InfoCommand}" IconImageSource="{local:ImgRes Files.info.png}"/>
+                            <MenuItem IsDestructive="False" Command="{Binding ZipCommand}" Text="Zip" IconImageSource="{local:ImgRes Files.zip.png}"/>
+                            <MenuItem IsDestructive="True" Command="{Binding DeleteCommand}" Text="{local:Localizer Delete}" CommandParameter="{x:Reference page}" IconImageSource="{local:ImgRes Files.delete.png}"/>
+                        </ViewCell.ContextActions>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

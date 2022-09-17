@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.VideoPage" xmlns:video="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer" xmlns:local="clr-namespace:Slot">
+    <ContentPage.Content>
+        <StackLayout Orientation="Horizontal" Spacing="0" Padding="0">
+            <Slider x:Name="slider" Rotation="90" WidthRequest="40" HeightRequest="300" Scale="2.5" HorizontalOptions="FillAndExpand" ThumbImageSource="{local:ImgRes Files.VolumeLabel.png}" Minimum="0" Maximum="100" Value="0.5"/>
+            <Frame Padding="0" CornerRadius="0" WidthRequest="500" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <video:VideoPlayer x:Name="video" AutoPlay="True" IsVisible="True" FillMode="ResizeAspect" DisplayControls="True" Repeat="False" Source="{Binding Source}" Paused="VideoPlayer_Paused" Volume="{Binding Path=Value,Source={x:Reference slider}}"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="TapGestureRecognizer_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.FileWrite" xmlns:local="clr-namespace:Slot">
+  <ContentView.Content>
+      <StackLayout>
+            <Label Text="{TemplateBinding Model.Handle,StringFormat='0x{0}'}" FontSize="Large"/>
+            <ScrollView Orientation="Vertical" HeightRequest="350">
+                <Editor x:Name="edit" Text="{TemplateBinding Model.Bytes,Mode=OneWay,Converter={StaticResource fileConv}}" AutoSize="TextChanges" Keyboard="Url" IsSpellCheckEnabled="False" Placeholder="{local:Localizer DocumentPlaceholder}"/>
+            </ScrollView>
+            <BoxView WidthRequest="720" HeightRequest="1" Color="DarkOrchid"/>
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="{local:Localizer SetLengthTitle}" CornerRadius="0" Grid.Row="0" Grid.Column="0" Command="{TemplateBinding Model.SetLengthCommand}"/>
+                <Button Text="{local:Localizer SeekTitle}" CornerRadius="0" Grid.Row="0" Grid.Column="1" Command="{TemplateBinding Model.SeekCommand}"/>
+                <Button Text="{local:Localizer WriteBytesTitle}" CommandParameter="{x:Reference edit}" CornerRadius="0" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Command="{TemplateBinding Model.WriteBytesCommand}"/>
+            </Grid>
+            <Button Text="{local:Localizer Done}" Command="{TemplateBinding Model.DoneCommand}" FontFamily="kirillica"/>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.AuthorizationPage" xmlns:local="clr-namespace:Slot" xmlns:video="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer">
+    <ContentPage.Content>
+        <StackLayout Orientation="Horizontal" Spacing="50" Scale="1.5">
+            <StackLayout Orientation="Vertical">
+                <Label Text="{local:Localizer IsSignIn}" FontSize="Medium">
+                </Label>
+                <BoxView HeightRequest="2" Color="Green" WidthRequest="60" IsVisible="{Binding IsSignIn,Mode=OneWay}"/>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label Text="{local:Localizer IsSignUp}" FontSize="Medium">
+                    
+                </Label>
+                <BoxView HeightRequest="2" Color="Green" WidthRequest="85" IsVisible="{Binding IsSignUp,Mode=OneWay}"/>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped"/>
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

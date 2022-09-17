@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.SlotPage" xmlns:local="clr-namespace:Slot"  FlyoutIsPresented="False" FlyoutWidth="250">
+    <Shell.FlyoutHeader>
+        <AbsoluteLayout>
+            <Image Source="{Binding Icon,Converter={StaticResource byteConv}}" Aspect="Fill" HeightRequest="200" WidthRequest="250" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+            <Label Text="{Binding Login}" FontSize="Large" AbsoluteLayout.LayoutBounds="0.05,0.9,1,0.2" AbsoluteLayout.LayoutFlags="All"/>
+        </AbsoluteLayout>
+    </Shell.FlyoutHeader>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Shell.ForegroundColor="White" Shell.BackgroundColor="DarkOrchid">
+        <Tab Icon="{local:ImgRes Files.Explorer.png}" Title="{local:Localizer Explorer}" Shell.TabBarTitleColor="IndianRed">
+            <ShellContent>
+                <local:ExplorerPage/>
+            </ShellContent>
+        </Tab>
+        <Tab Icon="{local:ImgRes Files.Streamer.png}" Title="{local:Localizer Streamer}" Shell.TabBarTitleColor="GreenYellow">
+            <ShellContent>
+                <local:Streamer/>
+            </ShellContent>
+        </Tab>
+        <Tab Icon="{local:ImgRes Files.SlotAPI.png}" Title="{local:Localizer SlotAPI}" Shell.TabBarTitleColor="CornflowerBlue">
+            <ShellContent>
+                <local:SlotAPIPage/>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <MenuItem Clicked="MenuItem_Clicked" Text="{local:Localizer SignOut}" IconImageSource="{local:ImgRes Files.signout.png}"/>
+</Shell>

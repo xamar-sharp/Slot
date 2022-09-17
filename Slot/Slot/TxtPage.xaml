@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Name="txtPage" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.TxtPage" xmlns:local="clr-namespace:Slot">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Command="{Binding InfoCommand}" IconImageSource="{local:ImgRes 'Files.info.png'}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <CheckBox x:Name="textChanged" IsChecked="{Binding TextWasChanged,Mode=OneWayToSource}" IsVisible="false"/>
+            <ScrollView Orientation="Vertical" HeightRequest="400">
+                <Editor Text="{Binding Text,Mode=TwoWay}" Completed="Editor_Completed" AutoSize="TextChanges" Keyboard="Url" IsSpellCheckEnabled="False" Placeholder="{local:Localizer DocumentPlaceholder}"/>
+            </ScrollView>
+            <BoxView HeightRequest="1" Color="DarkOrchid" WidthRequest="720"/>
+            <Button Text="{local:Localizer WriteLine}" Command="{Binding WriteCommand}" FontFamily="kirillica"/>
+            <Button Text="{local:Localizer ClipboardButton}" Command="{Binding ClipboardCommand}" FontFamily="kirillica"/>
+            <Button Text="{local:Localizer Done}" Command="{Binding DoneCommand}" FontFamily="kirillica"/>
+            <Label Text="{local:Notify {x:Reference txtPage}}" FontSize="Medium" FontFamily="Glory"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

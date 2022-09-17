@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.ExplorerPage" xmlns:local="clr-namespace:Slot">
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Source}" HasUnevenRows="False" RowHeight="80" SeparatorColor="DimGray" ItemTapped="ListView_ItemTapped" CachingStrategy="RetainElement">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Horizontal">
+                                <Image HeightRequest="80" WidthRequest="80" HorizontalOptions="StartAndExpand" Source="{local:ImgRes Files.drive.png}" Aspect="Fill"/>
+                                <Label Text="{Binding Name}" FontFamily="kirillica" FontSize="Large" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </ViewCell.View>
+                        <ViewCell.ContextActions>
+                            <MenuItem IsDestructive="False" Command="{Binding InfoCommand}" IconImageSource="{local:ImgRes Files.info.png}"/>
+                        </ViewCell.ContextActions>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

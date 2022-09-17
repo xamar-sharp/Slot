@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.Streamer" xmlns:local="clr-namespace:Slot">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <ImageButton Aspect="Fill" Command="{Binding PushFileCommand}" Source="file.jpg" Grid.Row="0" Grid.Column="0"/>
+        <ImageButton Aspect="Fill" Command="{Binding PushXmlCommand}" Source="{local:ImgRes 'Streaming.xml.jpg'}" Grid.Row="0" Grid.Column="1"/>
+        <ImageButton Aspect="Fill" Command="{Binding PushJsonCommand}" Source="{local:ImgRes 'Streaming.json.jpg'}" Grid.Row="1" Grid.Column="0"/>
+        <ImageButton Aspect="Fill" Command="{Binding PushCompressorCommand}" Source="{local:ImgRes 'Streaming.compressor.jpg'}" Grid.Row="1" Grid.Column="1"/>
+        <ImageButton Aspect="Fill" Command="{Binding PushTextCommand}" Source="{local:ImgRes 'Streaming.text.jpg'}" Grid.Row="2" Grid.Column="0"/>
+        <ImageButton Aspect="Fill" Command="{Binding PushBinaryCommand}" Source="{local:ImgRes 'Streaming.binary.jpg'}" Grid.Row="2" Grid.Column="1"/>
+    </Grid>
+
+</ContentPage>

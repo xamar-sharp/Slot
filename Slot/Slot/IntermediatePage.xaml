@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.IntermediatePage" xmlns:local="clr-namespace:Slot">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image HorizontalOptions="StartAndExpand" HeightRequest="100" WidthRequest="100" Source="{local:ImgRes Files.folder.png}" Aspect="Fill"/>
+                <Label Text="{local:Localizer Directories}" FontFamily="kirillica" FontSize="Title" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <BoxView HeightRequest="1" WidthRequest="700" Color="DarkOrchid"/>
+            <StackLayout Orientation="Horizontal">
+                <Image HorizontalOptions="StartAndExpand" HeightRequest="100" WidthRequest="100" Source="{local:ImgRes Extensions.binary.png}" Aspect="Fill"/>
+                <Label Text="{local:Localizer Files}" FontFamily="kirillica" FontSize="Title" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped_1"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <BoxView HeightRequest="1" WidthRequest="700" Color="DarkOrchid"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

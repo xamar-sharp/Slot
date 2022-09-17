@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.DatWrite" xmlns:local="clr-namespace:Slot">
+  <ContentView.Content>
+        <StackLayout>
+            <ScrollView Orientation="Vertical" HeightRequest="350">
+                <Editor x:Name="edit" Text="{TemplateBinding Model.Text,Mode=OneWay}" AutoSize="TextChanges" Keyboard="Url" IsSpellCheckEnabled="False" Placeholder="{local:Localizer DocumentPlaceholder}"/>
+            </ScrollView>
+            <BoxView WidthRequest="720" HeightRequest="1" Color="DarkOrchid"/>
+            <Button Text="{local:Localizer Write}" CornerRadius="0" Command="{TemplateBinding Model.WriteCommand}"/>
+            <Button Text="{local:Localizer Done}" Command="{TemplateBinding Model.DoneCommand}" FontFamily="kirillica"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.JsonWrite" xmlns:local="clr-namespace:Slot">
+  <ContentView.Content>
+      <StackLayout>
+            <ScrollView Orientation="Vertical" HeightRequest="350">
+                <Editor Text="{TemplateBinding Model.Text,Mode=TwoWay}" AutoSize="TextChanges" Keyboard="Url" IsSpellCheckEnabled="False" Placeholder="{local:Localizer DocumentPlaceholder}"/>
+            </ScrollView>
+            <BoxView WidthRequest="720" HeightRequest="1" Color="DarkOrchid"/>
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="{local:Localizer JsonComment}" CornerRadius="0" Grid.Row="0" Grid.Column="0" Command="{TemplateBinding Model.CommentCommand}"/>
+                <Button Text="{local:Localizer JsonStartObject}" CornerRadius="0" Grid.Row="0" Grid.Column="1" Command="{TemplateBinding Model.StartObjectCommand}"/>
+                <Button Text="{local:Localizer JsonStartArray}" CornerRadius="0" Grid.Row="0" Grid.Column="2" Command="{TemplateBinding Model.StartArrayCommand}"/>
+                <Button Text="{local:Localizer JsonEndArray}" CornerRadius="0" Grid.Row="1" Grid.Column="0" Command="{TemplateBinding Model.EndArrayCommand}"/>
+                <Button Text="{local:Localizer JsonEndObject}" CornerRadius="0" Grid.Row="1" Grid.Column="1" Command="{TemplateBinding Model.EndObjectCommand}"/>
+                <Button Text="{local:Localizer JsonProperty}" CornerRadius="0" Grid.Row="1" Grid.Column="2" Command="{TemplateBinding Model.PropertyCommand}"/>
+                <Button Text="{local:Localizer JsonValue}" CornerRadius="0" Grid.Row="2" Grid.Column="0" Command="{TemplateBinding Model.ValueCommand}"/>
+                <Button Text="{local:Localizer JsonNull}" CornerRadius="0" Grid.Row="2" Grid.Column="1" Command="{TemplateBinding Model.NullCommand}"/>
+                <Button Text="{local:Localizer JsonUndefined}" CornerRadius="0" Grid.Row="2" Grid.Column="2" Command="{TemplateBinding Model.UndefinedCommand}"/>
+            </Grid>
+            <Button Text="{local:Localizer Import}" Command="{TemplateBinding Model.ImportCommand}" FontFamily="kirillica"/>
+            <Button Text="{local:Localizer Done}" Command="{TemplateBinding Model.DoneCommand}" FontFamily="kirillica"/>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

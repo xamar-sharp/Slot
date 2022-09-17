@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.XmlRead" xmlns:local="clr-namespace:Slot">
+  <ContentView.Content>
+      <StackLayout>
+            <CheckBox x:Name="textChanged" IsChecked="{TemplateBinding Model.TextWasChanged,Mode=OneWayToSource}" IsVisible="false"/>
+            <ScrollView Orientation="Vertical" HeightRequest="400">
+                <Editor Text="{TemplateBinding Model.Text,Mode=TwoWay}" Completed="Editor_Completed" AutoSize="TextChanges" Keyboard="Url" IsSpellCheckEnabled="False" Placeholder="{local:Localizer DocumentPlaceholder}"/>
+            </ScrollView>
+            <BoxView HeightRequest="1" Color="DarkOrchid" WidthRequest="720"/>
+            <Button Text="{local:Localizer ClipboardButton}" Command="{TemplateBinding Model.ClipboardCommand}" FontFamily="kirillica"/>
+            <Button Text="{local:Localizer Done}" Command="{TemplateBinding Model.DoneCommand}" FontFamily="kirillica"/>
+            <ContentPresenter/>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Name="page" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.DirectoryInfoPage" xmlns:local="clr-namespace:Slot">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" Text="{local:Localizer MoveDirectory}" Command="{Binding MoveCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <BoxView HeightRequest="20"/>
+            <Grid HeightRequest="780">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="{local:Localizer Name}" Grid.Row="0" Grid.Column="0" FontFamily="kirillica"/>
+                <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="1" FontFamily="kirillica"/>
+                <Label Text="{local:Localizer FullName}" Grid.Row="1" Grid.Column="0" FontFamily="kirillica"/>
+                <Label Text="{Binding FullName}" Grid.Row="1" Grid.Column="1" FontFamily="kirillica"/>
+                <Label Text="{local:Localizer Parent}" Grid.Row="2" Grid.Column="0" FontFamily="kirillica"/>
+                <Label Text="{Binding Parent}" Grid.Row="2" Grid.Column="1" FontFamily="kirillica"/>
+                <Label Text="{local:Localizer Root}" Grid.Row="3" Grid.Column="0" FontFamily="kirillica"/>
+                <Label Text="{Binding Root}" Grid.Row="3" Grid.Column="1" FontFamily="kirillica"/>
+                <Label Text="{local:Localizer CreationTime}" Grid.Row="4" Grid.Column="0" FontFamily="kirillica"/>
+                <Label Text="{Binding CreationTime}" Grid.Row="4" Grid.Column="1" FontFamily="kirillica"/>
+                <Label Text="{local:Localizer LastAccessTime}" Grid.Row="5" Grid.Column="0" FontFamily="kirillica"/>
+                <Label Text="{Binding LastAccessTime}" Grid.Row="5" Grid.Column="1" FontFamily="kirillica"/>
+                <Label Text="{local:Localizer LastWriteTime}" Grid.Row="6" Grid.Column="0" FontFamily="kirillica"/>
+                <Label Text="{Binding LastWriteTime}" Grid.Row="6" Grid.Column="1" FontFamily="kirillica"/>
+                <Label Text="{local:Localizer Attributes}" Grid.Row="7" Grid.Column="0" FontFamily="kirillica"/>
+                <Label Text="{Binding Attributes}" Grid.Row="7" Grid.Column="1" FontFamily="kirillica"/>
+                <Label Text="{local:Localizer ObjectCount}" Grid.Row="8" Grid.Column="0" FontFamily="kirillica"/>
+                <Label Text="{Binding Count}" Grid.Row="8" Grid.Column="1" FontFamily="kirillica"/>
+            </Grid>
+            <Label Text="{local:Notify {x:Reference page}}" FontSize="Medium" FontFamily="kirillica"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

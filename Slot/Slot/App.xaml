@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.App" xmlns:local="clr-namespace:Slot">
+    <Application.Resources>
+        <ResourceDictionary>
+            <local:ExtensionToIconConverter x:Key="fileIconConv"/>
+            <local:ByteArrayImg x:Key="byteConv"/>
+            <local:SpanToStringConverter x:Key="fileConv"/>
+            <Style TargetType="Shell">
+                <Style.Setters>
+                    <Setter Property="FlyoutBackgroundColor" Value="DarkOrchid"/>
+                </Style.Setters>
+            </Style>
+            <Style TargetType="TabbedPage">
+                <Style.Setters>
+                    <Setter Property="BarBackgroundColor" Value="DarkOrchid"/>
+                    <Setter Property="BarTextColor" Value="White"/>
+                </Style.Setters>
+            </Style>
+            <Style TargetType="Slider">
+                <Style.Setters>
+                    <Setter Property="MaximumTrackColor" Value="White"/>
+                    <Setter Property="MinimumTrackColor" Value="DarkOrchid"/>
+                </Style.Setters>
+            </Style>
+            <Style TargetType="NavigationPage">
+                <Style.Setters>
+                    <Setter Property="BarBackgroundColor" Value="DarkOrchid"/>
+                    <Setter Property="BarTextColor" Value="White"/>
+                </Style.Setters>
+            </Style>
+            <Style TargetType="CheckBox">
+                <Style.Setters>
+                    <Setter Property="Color" Value="DarkOrchid"/>
+                </Style.Setters>
+            </Style>
+            <Style TargetType="ActivityIndicator">
+                <Style.Setters>
+                    <Setter Property="Color" Value="DarkOrchid"/>
+                </Style.Setters>
+            </Style>
+            <Style TargetType="Switch">
+                <Style.Setters>
+                    <Setter Property="ThumbColor" Value="DarkOrchid"/>
+                    <Setter Property="OnColor" Value="DarkOrchid"/>
+                </Style.Setters>
+            </Style>
+            <Style TargetType="BoxView">
+                <Style.Setters>
+                    <Setter Property="Color" Value="DarkOrchid"/>
+                </Style.Setters>
+            </Style>
+            <Style TargetType="Frame">
+                <Style.Setters>
+                    <Setter Property="BorderColor" Value="DarkOrchid"/>
+                    <Setter Property="CornerRadius" Value="15"/>
+                    <Setter Property="Padding" Value="0"/>
+                </Style.Setters>
+            </Style>
+            <Style TargetType="StackLayout">
+                <Style.Setters>
+                    <Setter Property="BackgroundColor" Value="Black"/>
+                </Style.Setters>
+            </Style>
+            <Style TargetType="AbsoluteLayout">
+                <Style.Setters>
+                    <Setter Property="BackgroundColor" Value="Black"/>
+                </Style.Setters>
+            </Style>
+            <Style TargetType="Label">
+                <Style.Setters>
+                    <Setter Property="TextColor" Value="White"/>
+                </Style.Setters>
+            </Style>
+            <Style TargetType="Button">
+                <Style.Setters>
+                    <Setter Property="TextColor" Value="White"/>
+                    <Setter Property="CornerRadius" Value="15"/>
+                    <Setter Property="BackgroundColor" Value="Black"/>
+                    <Setter Property="BorderWidth" Value="1"/>
+                    <Setter Property="BorderColor" Value="DarkOrchid"/>
+                </Style.Setters>
+            </Style>
+            <Style TargetType="ImageButton">
+                <Style.Setters>
+                    <Setter Property="CornerRadius" Value="15"/>
+                    <Setter Property="BorderWidth" Value="1"/>
+                    <Setter Property="BorderColor" Value="DarkOrchid"/>
+                    <Setter Property="BackgroundColor" Value="Black"/>
+                </Style.Setters>
+            </Style>
+            <Style TargetType="RadioButton">
+                <Style.Setters>
+                    <Setter Property="TextColor" Value="White"/>
+                    <Setter Property="CornerRadius" Value="15"/>
+                    <Setter Property="BorderWidth" Value="1"/>
+                    <Setter Property="BackgroundColor" Value="Black"/>
+                    <Setter Property="BorderColor" Value="DarkOrchid"/>
+                </Style.Setters>
+            </Style>
+            <Style TargetType="Entry">
+                <Style.Setters>
+                    <Setter Property="TextColor" Value="White"/>
+                    <Setter Property="PlaceholderColor" Value="Gray"/>
+                </Style.Setters>
+            </Style>
+            <Style TargetType="Editor">
+                <Style.Setters>
+                    <Setter Property="TextColor" Value="White"/>
+                    <Setter Property="PlaceholderColor" Value="Gray"/>
+                </Style.Setters>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

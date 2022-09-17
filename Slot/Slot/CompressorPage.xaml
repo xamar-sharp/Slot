@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.CompressorPage" xmlns:local="clr-namespace:Slot" BackgroundColor="Black">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Spacing="40">
+            <Entry Text="{Binding Destination,Mode=OneWayToSource}" Placeholder="{local:Localizer Destination}"/>
+            <RadioButton Content="{local:Localizer Deflate}" Value="1" GroupName="Algs" IsChecked="True" CheckedChanged="RadioButton_CheckedChanged"/>
+            <RadioButton Content="{local:Localizer GZip}" GroupName="Algs" Value="2" IsChecked="False" CheckedChanged="RadioButton_CheckedChanged_1"/>
+            <RadioButton Content="{local:Localizer Brotli}" GroupName="Algs" Value="3" IsChecked="False" CheckedChanged="RadioButton_CheckedChanged_2"/>
+            <StackLayout Orientation="Horizontal">
+                <Switch IsToggled="{Binding IsDecompress}" Toggled="Switch_Toggled"/>
+                <Label x:Name="isDecompress" Text="{local:Localizer Compress}"/>
+            </StackLayout>
+            <ActivityIndicator x:Name="ind" IsRunning="False" Color="CornflowerBlue" HorizontalOptions="Center"/>
+            <Button Text="{local:Localizer Done}" Command="{Binding DoneCommand}" CommandParameter="{x:Reference ind}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

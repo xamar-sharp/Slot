@@ -1,0 +1,204 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Extensions\binary.png" />
+    <None Remove="Extensions\Brotli.png" />
+    <None Remove="Extensions\Dat.png" />
+    <None Remove="Extensions\Deflate.png" />
+    <None Remove="Extensions\Gzip.png" />
+    <None Remove="Extensions\Jpg.png" />
+    <None Remove="Extensions\Json.png" />
+    <None Remove="Extensions\Mp3.png" />
+    <None Remove="Extensions\Mp4.png" />
+    <None Remove="Extensions\Png.png" />
+    <None Remove="Extensions\Txt.png" />
+    <None Remove="Extensions\Xml.png" />
+    <None Remove="Extensions\Zip.png" />
+    <None Remove="Files\default.jpg" />
+    <None Remove="Files\delete.png" />
+    <None Remove="Files\drive.png" />
+    <None Remove="Files\Explorer.png" />
+    <None Remove="Files\folder.png" />
+    <None Remove="Files\info.png" />
+    <None Remove="Files\pre.mp4" />
+    <None Remove="Files\signin.jpg" />
+    <None Remove="Files\signout.png" />
+    <None Remove="Files\signup.jpg" />
+    <None Remove="Files\SlotAPI.png" />
+    <None Remove="Files\Streamer.png" />
+    <None Remove="Files\subdir.png" />
+    <None Remove="Files\unzip.png" />
+    <None Remove="Files\VolumeLabel.png" />
+    <None Remove="Files\zip.png" />
+    <None Remove="GRANCE_DEMO.otf" />
+    <None Remove="Streaming\binary.jpg" />
+    <None Remove="Streaming\combinator.jpg" />
+    <None Remove="Streaming\compressor.jpg" />
+    <None Remove="Streaming\json.jpg" />
+    <None Remove="Streaming\remark.jpg" />
+    <None Remove="Streaming\text.jpg" />
+    <None Remove="Streaming\xml.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Extensions\binary.png" />
+    <EmbeddedResource Include="Extensions\Brotli.png" />
+    <EmbeddedResource Include="Extensions\Dat.png" />
+    <EmbeddedResource Include="Extensions\Deflate.png" />
+    <EmbeddedResource Include="Extensions\Gzip.png" />
+    <EmbeddedResource Include="Extensions\Jpg.png" />
+    <EmbeddedResource Include="Extensions\Json.png" />
+    <EmbeddedResource Include="Extensions\Mp3.png" />
+    <EmbeddedResource Include="Extensions\Mp4.png" />
+    <EmbeddedResource Include="Extensions\Png.png" />
+    <EmbeddedResource Include="Extensions\Txt.png" />
+    <EmbeddedResource Include="Extensions\Xml.png" />
+    <EmbeddedResource Include="Extensions\Zip.png" />
+    <EmbeddedResource Include="Files\default.jpg" />
+    <EmbeddedResource Include="Files\delete.png" />
+    <EmbeddedResource Include="Files\drive.png" />
+    <EmbeddedResource Include="Files\Explorer.png" />
+    <EmbeddedResource Include="Files\folder.png" />
+    <EmbeddedResource Include="Files\info.png" />
+    <EmbeddedResource Include="Files\pre.mp4" />
+    <EmbeddedResource Include="Files\signin.jpg" />
+    <EmbeddedResource Include="Files\signout.png" />
+    <EmbeddedResource Include="Files\signup.jpg" />
+    <EmbeddedResource Include="Files\SlotAPI.png" />
+    <EmbeddedResource Include="Files\Streamer.png" />
+    <EmbeddedResource Include="Files\subdir.png" />
+    <EmbeddedResource Include="Files\unzip.png" />
+    <EmbeddedResource Include="Files\VolumeLabel.png" />
+    <EmbeddedResource Include="Files\zip.png" />
+    <EmbeddedResource Include="GRANCE_DEMO.otf" />
+    <EmbeddedResource Include="Streaming\binary.jpg" />
+    <EmbeddedResource Include="Streaming\combinator.jpg" />
+    <EmbeddedResource Include="Streaming\compressor.jpg" />
+    <EmbeddedResource Include="Streaming\json.jpg" />
+    <EmbeddedResource Include="Streaming\remark.jpg" />
+    <EmbeddedResource Include="Streaming\text.jpg" />
+    <EmbeddedResource Include="Streaming\xml.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Octane.Xam.VideoPlayer" Version="3.1.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Streamer.xaml.cs">
+      <DependentUpon>Streamer.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="AuthorizationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CompressorPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="DatPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="DatRead.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="DatWrite.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="DirectoriesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="DirectoryInfoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="DriveInfoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ExplorerPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FileBinPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FileInfoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FileRead.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FilesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FileWrite.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ImagePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="IntermediatePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="IPPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="JsonPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="JsonRead.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="JsonWrite.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="LoginView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="RegisterView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SlotAPIPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SlotPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TxtPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="VideoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="XmlPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="XmlRead.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="XmlWrite.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

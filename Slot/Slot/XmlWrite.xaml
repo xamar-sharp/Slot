@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.XmlWrite" xmlns:local="clr-namespace:Slot">
+    <ContentView.Content>
+        <StackLayout>
+            <ScrollView Orientation="Vertical" HeightRequest="350">
+                <Editor Text="{TemplateBinding Model.Text,Mode=TwoWay}" Completed="Editor_Completed" AutoSize="TextChanges" Keyboard="Url" IsSpellCheckEnabled="False" Placeholder="{local:Localizer DocumentPlaceholder}"/>
+            </ScrollView>
+            <BoxView WidthRequest="720" HeightRequest="1" Color="DarkOrchid"/>
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="{local:Localizer XmlComment}" CornerRadius="0" Grid.Row="0" Grid.Column="0" Command="{TemplateBinding Model.CommentCommand}"/>
+                <Button Text="{local:Localizer XmlStartElement}" CornerRadius="0" Grid.Row="0" Grid.Column="1" Command="{TemplateBinding Model.StartElementCommand}"/>
+                <Button Text="{local:Localizer XmlAttribute}" CornerRadius="0" Grid.Row="0" Grid.Column="2" Command="{TemplateBinding Model.AttributeCommand}"/>
+                <Button Text="{local:Localizer XmlEndElement}" CornerRadius="0" Grid.Row="1" Grid.Column="0" Command="{TemplateBinding Model.EndElementCommand}"/>
+                <Button Text="{local:Localizer XmlStartDocument}" CornerRadius="0" Grid.Row="1" Grid.Column="1" Command="{TemplateBinding Model.StartDocumentCommand}"/>
+                <Button Text="{local:Localizer XmlEndDocument}" CornerRadius="0" Grid.Row="1" Grid.Column="2" Command="{TemplateBinding Model.EndDocumentCommand}"/>
+                <Button Text="{local:Localizer XmlValue}" CornerRadius="0" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Command="{TemplateBinding Model.ValueCommand}"/>
+            </Grid>
+            <Button Text="{local:Localizer Done}" Command="{TemplateBinding Model.DoneCommand}" FontFamily="kirillica"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

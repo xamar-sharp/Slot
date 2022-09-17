@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Name="filePage" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.FileBinPage" xmlns:local="clr-namespace:Slot">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Command="{Binding InfoCommand}" IconImageSource="{local:ImgRes 'Files.info.png'}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Label Text="{local:Notify {x:Reference filePage}}" FontSize="Medium" FontFamily="Glory"/>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Name="page" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slot.FilesPage" xmlns:local="clr-namespace:Slot">
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Source}" HasUnevenRows="False" RowHeight="80" SeparatorColor="DimGray" ItemTapped="ListView_ItemTapped" CachingStrategy="RecycleElement">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Horizontal">
+                                <Image HeightRequest="80" WidthRequest="80" HorizontalOptions="StartAndExpand" Source="{Binding Path=Name,Converter={StaticResource fileIconConv}}" Aspect="Fill"/>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding Name}" FontFamily="kirillica" FontSize="Large" VerticalOptions="StartAndExpand" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Length}" FontFamily="kirillica" FontSize="Medium" VerticalOptions="EndAndExpand" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell.View>
+                        <ViewCell.ContextActions>
+                            <MenuItem IsDestructive="False" Command="{Binding InfoCommand}" IconImageSource="{local:ImgRes Files.info.png}"/>
+                            <MenuItem IsDestructive="False" Command="{Binding UnzipCommand}" IconImageSource="{local:ImgRes Files.unzip.png}"/>
+                            <MenuItem IsDestructive="True" Command="{Binding DeleteCommand}" CommandParameter="{x:Reference page}" IconImageSource="{local:ImgRes Files.delete.png}"/>
+                        </ViewCell.ContextActions>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
