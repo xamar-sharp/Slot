@@ -37,6 +37,10 @@ namespace Slot.ViewModels
                     }
                 });
             });
+            CompressCommand = new Command(async () =>
+            {
+                await new StreamerViewModel(input).Match(".compress", FullName, writeable: false);
+            });
             CopyCommand = new Command(() =>
             {
                 Device.BeginInvokeOnMainThread(async () =>
@@ -139,5 +143,6 @@ namespace Slot.ViewModels
         public ICommand InfoCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
         public ICommand UnzipCommand { get; set; }
+        public ICommand CompressCommand { get; set; }
     }
 }

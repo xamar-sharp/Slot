@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage x:Name="page" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Slot.DirectoryInfoPage" xmlns:local="clr-namespace:Slot">
+             x:Class="Slot.DirectoryInfoPage" xmlns:local="clr-namespace:Slot" BackgroundColor="Black">
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Secondary" Text="{local:Localizer MoveDirectory}" Command="{Binding MoveCommand}"/>
     </ContentPage.ToolbarItems>

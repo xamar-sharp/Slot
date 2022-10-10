@@ -4,6 +4,7 @@
              x:Class="Slot.FileInfoPage" xmlns:local="clr-namespace:Slot">
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary" Command="{Binding RemoveCommand}" IconImageSource="{local:ImgRes 'Files.delete.png'}"/>
+        <ToolbarItem Order="Primary" Command="{Binding CompressCommand}" IconImageSource="{local:ImgRes 'Files.compressor.jpg'}"/>
         <ToolbarItem Order="Secondary" Command="{Binding MoveCommand}" Text="{local:Localizer Move}"/>
         <ToolbarItem Order="Secondary" Command="{Binding CopyCommand}" Text="{local:Localizer Copy}"/>
         <ToolbarItem Order="Secondary" Command="{Binding ToAPICommand}" Text="{local:Localizer ToAPI}"/>
